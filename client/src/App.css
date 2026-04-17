@@ -1,0 +1,394 @@
+/* ============================================
+   App.css - Global Styles & Theming
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap');
+
+/* ============================================
+   Theme Variables
+   ============================================ */
+:root {
+  /* Light Theme (White & Green) */
+  --bg-gradient: linear-gradient(135deg, #f8fafc, #dcfce7, #f0fdf4);
+  --primary-accent: #10b981;
+  --primary-accent-hover: #059669;
+  --button-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  --button-shadow: rgba(16, 185, 129, 0.3);
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-border: rgba(255, 255, 255, 0.4);
+  --card-shadow: rgba(0, 0, 0, 0.05);
+  --navbar-bg: rgba(255, 255, 255, 0.7);
+  --navbar-border: rgba(0, 0, 0, 0.05);
+  --input-bg: rgba(255, 255, 255, 0.6);
+  --input-border: rgba(0, 0, 0, 0.1);
+  --input-focus: rgba(16, 185, 129, 0.2);
+  --icon-bg: rgba(16, 185, 129, 0.1);
+}
+
+[data-theme='dark'] {
+  /* Dark Theme (Black & Orange) */
+  --bg-gradient: linear-gradient(-45deg, #000000, #431407, #0a0a0a);
+  --primary-accent: #f97316;
+  --primary-accent-hover: #ea580c;
+  --button-gradient: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  --button-shadow: rgba(249, 115, 22, 0.3);
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --card-bg: rgba(20, 20, 20, 0.8);
+  --card-border: rgba(255, 255, 255, 0.15);
+  --card-shadow: rgba(0, 0, 0, 0.3);
+  --navbar-bg: rgba(10, 10, 10, 0.6);
+  --navbar-border: rgba(255, 255, 255, 0.1);
+  --input-bg: rgba(0, 0, 0, 0.3);
+  --input-border: rgba(255, 255, 255, 0.2);
+  --input-focus: rgba(249, 115, 22, 0.2);
+  --icon-bg: rgba(249, 115, 22, 0.15);
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  background-color: #f8fafc;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[data-theme='dark'] body {
+  background-color: #000000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border-style: none;
+  outline: none;
+  font-family: inherit;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* ============================================
+   Backgrounds & Shells (Abstract Gradients)
+   ============================================ */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.app-shell, .protected-shell {
+  min-height: 100vh;
+  background: var(--bg-gradient);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================
+   Glassmorphic Components
+   ============================================ */
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 10px 40px var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 45px var(--card-shadow);
+}
+
+/* ============================================
+   Shared Button Classes
+   ============================================ */
+.btn-primary {
+  background: var(--button-gradient);
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 26px;
+  border-radius: 12px;
+  border-style: none;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 4px 15px var(--button-shadow);
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px var(--button-shadow);
+}
+
+.btn-primary-lg {
+  background: var(--button-gradient);
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 36px;
+  border-radius: 12px;
+  border-style: none;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 6px 20px var(--button-shadow);
+}
+
+.btn-primary-lg:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px var(--button-shadow);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background: var(--card-border);
+  transform: translateY(-2px);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+
+.btn-danger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
+}
+
+.btn-danger-text {
+  background-color: transparent;
+  color: #ef4444;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.btn-danger-text:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+.btn-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ============================================
+   Shared Badge Classes
+   ============================================ */
+.badge {
+  background: var(--icon-bg);
+  color: var(--primary-accent);
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 100px;
+  display: inline-block;
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--input-border);
+}
+
+.badge-success {
+  background: rgba(220, 252, 231, 0.8);
+  color: #15803d;
+  border-color: rgba(21, 128, 61, 0.1);
+}
+
+[data-theme='dark'] .badge-success {
+  background: rgba(21, 128, 61, 0.2);
+  color: #4ade80;
+  border-color: rgba(74, 222, 128, 0.2);
+}
+
+.badge-warning {
+  background: rgba(254, 243, 199, 0.8);
+  color: #b45309;
+  border-color: rgba(180, 83, 9, 0.1);
+}
+
+[data-theme='dark'] .badge-warning {
+  background: rgba(180, 83, 9, 0.2);
+  color: #fbbf24;
+  border-color: rgba(251, 191, 36, 0.2);
+}
+
+.badge-error {
+  background: rgba(254, 226, 226, 0.8);
+  color: #b91c1c;
+  border-color: rgba(185, 28, 28, 0.1);
+}
+
+[data-theme='dark'] .badge-error {
+  background: rgba(185, 28, 28, 0.2);
+  color: #f87171;
+  border-color: rgba(248, 113, 113, 0.2);
+}
+
+/* ============================================
+   Shared Callout Classes
+   ============================================ */
+.callout {
+  border-left: 4px solid var(--primary-accent);
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  padding: 16px 20px;
+  border-radius: 0 12px 12px 0;
+  box-shadow: 0 4px 15px var(--card-shadow);
+  color: var(--text-primary);
+}
+
+.callout-success {
+  border-color: #10b981;
+}
+
+.callout-warning {
+  border-color: #f59e0b;
+}
+
+.callout-error {
+  border-color: #ef4444;
+}
+
+.callout-info {
+  border-color: #0ea5e9;
+}
+
+/* ============================================
+   Shared Form Classes
+   ============================================ */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.form-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.form-input {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  padding: 14px 18px;
+  border: 1px solid var(--input-border);
+  border-radius: 12px;
+  color: var(--text-primary);
+  background: var(--input-bg);
+  backdrop-filter: blur(8px);
+  outline: none;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.form-input:focus {
+  background: var(--card-bg);
+  border-color: var(--primary-accent);
+  box-shadow: 0 0 0 3px var(--input-focus);
+}
+
+/* ============================================
+   Loading State
+   ============================================ */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  gap: 16px;
+}
+
+.loading-container p {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-shadow: 0 2px 4px var(--card-shadow);
+}
+
+/* ============================================
+   Empty State
+   ============================================ */
+.empty-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 64px 24px;
+  gap: 16px;
+  text-align: center;
+}
+
+.empty-container h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.empty-container p {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: var(--text-secondary);
+}

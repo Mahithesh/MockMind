@@ -1,0 +1,234 @@
+.home-page {
+  background: transparent;
+  min-height: 100vh;
+  padding: 40px 60px;
+}
+
+.home-welcome {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.home-welcome-heading {
+  font-family: 'Outfit', sans-serif;
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 12px 0;
+  text-shadow: 0 2px 10px var(--card-shadow);
+}
+
+.home-welcome-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.home-stats-row {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.home-stat-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 30px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 30px var(--card-shadow);
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.home-stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.home-stat-icon {
+  font-size: 28px;
+  color: var(--primary-accent);
+}
+
+.home-stat-number {
+  font-family: 'Outfit', sans-serif;
+  font-size: 56px;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+  text-shadow: 0 2px 5px var(--card-shadow);
+}
+
+.home-stat-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.home-cta-container {
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.home-start-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 36px;
+  background: var(--button-gradient);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 25px var(--button-shadow);
+  transition: all 0.3s ease;
+}
+
+.home-start-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 35px var(--button-shadow);
+}
+
+.home-start-icon {
+  font-size: 22px;
+}
+
+.home-recent-section {
+  margin-top: 24px;
+}
+
+.home-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.home-section-heading {
+  font-family: 'Outfit', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  text-shadow: 0 2px 4px var(--card-shadow);
+}
+
+.home-view-all-btn {
+  background: var(--input-bg);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(8px);
+  color: var(--text-primary);
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.home-view-all-btn:hover {
+  background: var(--card-bg);
+  border-color: var(--primary-accent);
+}
+
+.home-loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 0;
+  gap: 16px;
+}
+
+.home-loading-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.home-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 0;
+  gap: 16px;
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border: 1px dashed var(--card-border);
+  border-radius: 16px;
+}
+
+.home-empty-icon {
+  font-size: 56px;
+  color: var(--text-secondary);
+}
+
+.home-empty-heading {
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.home-empty-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.home-empty-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--input-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: all 0.3s ease;
+}
+
+.home-empty-cta-btn:hover {
+  background: var(--card-bg);
+  border-color: var(--primary-accent);
+}
+
+.home-interviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .home-page {
+    padding: 32px 20px;
+  }
+
+  .home-stats-row {
+    flex-direction: column;
+  }
+
+  .home-welcome-heading {
+    font-size: 32px;
+  }
+}

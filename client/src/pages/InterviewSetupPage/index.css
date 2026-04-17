@@ -1,0 +1,418 @@
+.setup-page {
+  background: transparent;
+  min-height: 100vh;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.setup-container {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.setup-step-indicator {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.setup-step-badge {
+  padding: 10px 24px;
+  border-radius: 100px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  background: var(--input-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-secondary);
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+.setup-step-active {
+  background: var(--primary-accent);
+  color: #ffffff;
+  border-color: var(--primary-accent);
+  box-shadow: 0 8px 20px var(--button-shadow);
+  transform: translateY(-2px);
+}
+
+.setup-section {
+  margin-bottom: 40px;
+}
+
+.setup-section-heading {
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 24px 0;
+  text-shadow: 0 2px 5px var(--card-shadow);
+}
+
+.setup-roles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.setup-role-card {
+  background: var(--input-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.setup-role-card:hover {
+  background: var(--card-bg);
+  transform: translateY(-4px);
+}
+
+.setup-role-selected {
+  background: var(--card-bg);
+  border-color: var(--primary-accent);
+  box-shadow: 0 0 0 2px var(--primary-accent);
+  transform: translateY(-4px);
+}
+
+.setup-role-icon {
+  font-size: 32px;
+  color: var(--text-secondary);
+  transition: color 0.3s;
+}
+
+.setup-role-selected .setup-role-icon {
+  color: var(--primary-accent);
+}
+
+.setup-role-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.setup-role-selected .setup-role-title {
+  color: var(--primary-accent);
+}
+
+.setup-role-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.setup-role-selected .setup-role-desc {
+  color: var(--text-primary);
+}
+
+.setup-difficulty-row {
+  display: flex;
+  gap: 20px;
+}
+
+.setup-difficulty-card {
+  background: var(--input-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.setup-difficulty-card:hover {
+  background: var(--card-bg);
+  transform: translateY(-4px);
+}
+
+.setup-difficulty-selected {
+  background: var(--card-bg);
+  border-color: var(--primary-accent);
+  box-shadow: 0 0 0 2px var(--primary-accent);
+  transform: translateY(-4px);
+}
+
+.setup-difficulty-stars {
+  display: flex;
+  gap: 6px;
+  font-size: 24px;
+}
+
+.setup-star-filled {
+  color: var(--text-secondary);
+}
+
+.setup-difficulty-selected .setup-star-filled {
+  color: var(--primary-accent);
+}
+
+.setup-star-empty {
+  color: var(--card-border);
+}
+
+.setup-difficulty-selected .setup-star-empty {
+  color: var(--input-border);
+}
+
+.setup-difficulty-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.setup-difficulty-selected .setup-difficulty-label {
+  color: var(--primary-accent);
+}
+
+.setup-difficulty-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.setup-difficulty-selected .setup-difficulty-desc {
+  color: var(--text-primary);
+}
+
+.setup-resume-area {
+  display: flex;
+  justify-content: center;
+}
+
+.setup-upload-zone {
+  background: var(--input-bg);
+  border: 2px dashed var(--card-border);
+  border-radius: 16px;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.setup-upload-zone:hover {
+  background: var(--card-bg);
+  border-color: var(--primary-accent);
+}
+
+.setup-upload-icon {
+  font-size: 48px;
+  color: var(--text-secondary);
+}
+
+.setup-upload-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.setup-resume-uploaded {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 10px 30px var(--card-shadow);
+  border: 1px solid var(--primary-accent);
+}
+
+.setup-resume-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.setup-resume-file-icon {
+  font-size: 28px;
+  color: var(--primary-accent);
+}
+
+.setup-resume-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: var(--text-primary);
+  font-weight: 600;
+  margin: 0;
+}
+
+.setup-change-resume-btn {
+  padding: 10px 20px;
+  background: var(--input-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  color: var(--text-primary);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.setup-change-resume-btn:hover {
+  background: var(--card-bg);
+  border-color: var(--primary-accent);
+}
+
+.setup-nav-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  margin-top: 32px;
+}
+
+.setup-back-btn,
+.setup-next-btn,
+.setup-start-btn {
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.setup-back-btn {
+  background: var(--input-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--card-border);
+  color: var(--text-primary);
+}
+
+.setup-back-btn:hover {
+  background: var(--card-bg);
+}
+
+.setup-next-btn,
+.setup-start-btn {
+  background: var(--button-gradient);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 8px 20px var(--button-shadow);
+}
+
+.setup-next-btn:hover,
+.setup-start-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px var(--button-shadow);
+}
+
+.setup-start-btn-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.setup-preparing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  gap: 20px;
+}
+
+.setup-preparing-spinner {
+  color: var(--primary-accent);
+  width: 56px;
+  height: 56px;
+}
+
+.setup-preparing-heading {
+  font-family: 'Outfit', sans-serif;
+  font-size: 28px;
+  color: var(--text-primary);
+  margin: 0;
+  text-shadow: 0 2px 5px var(--card-shadow);
+}
+
+.setup-preparing-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin: 0;
+  max-width: 500px;
+}
+
+.setup-preparing-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  padding: 24px 32px;
+  border-radius: 16px;
+  border: 1px solid var(--card-border);
+}
+
+.setup-prep-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.setup-prep-step-icon-active {
+  font-size: 24px;
+  color: var(--primary-accent);
+}
+
+.setup-prep-step-icon-pending {
+  font-size: 24px;
+  color: var(--text-secondary);
+}
+
+.setup-prep-step-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.setup-preparing-hint {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 16px 0 0 0;
+}
+
+@media (max-width: 768px) {
+  .setup-page {
+    padding: 24px;
+  }
+}
