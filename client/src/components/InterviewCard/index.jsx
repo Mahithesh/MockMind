@@ -17,7 +17,10 @@ function InterviewCard({ interview, onClick, onDelete }) {
   return (
     <div className="interview-card" onClick={onClick}>
       <div className="interview-card-top">
-        <h3 className="interview-card-role">{interview.role}</h3>
+        <div className="interview-card-heading">
+          <h3 className="interview-card-role">{interview.role}</h3>
+          <p className="interview-card-subtitle">Resume-based mock interview session</p>
+        </div>
         <span className={`interview-badge ${statusClass}`}>{statusLabel}</span>
       </div>
       <div className="interview-card-meta">
@@ -29,13 +32,16 @@ function InterviewCard({ interview, onClick, onDelete }) {
       {interview.overallScore !== null &&
         interview.overallScore !== undefined && (
           <div className="interview-card-score">
-            <span
-              className="score-value"
-              style={{ color: getScoreColor(interview.overallScore) }}
-            >
-              {interview.overallScore}
-            </span>
-            <span className="score-label">/100</span>
+            <span className="score-caption">Interview Score</span>
+            <div className="score-display">
+              <span
+                className="score-value"
+                style={{ color: getScoreColor(interview.overallScore) }}
+              >
+                {interview.overallScore}
+              </span>
+              <span className="score-label">/100</span>
+            </div>
           </div>
         )}
       <div className="interview-card-footer">
